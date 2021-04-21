@@ -157,7 +157,8 @@ let src = null;
 let dstC1 = null;
 let dstC3 = null;
 let dstC4 = null;
-
+let mapY = null;
+let mapX = null;
 function startVideoProcessing() {
   if (!streaming) { console.warn("Please startup your webcam"); return; }
   stopVideoProcessing();
@@ -165,6 +166,8 @@ function startVideoProcessing() {
   dstC1 = new cv.Mat(height, width, cv.CV_8UC1);
   dstC3 = new cv.Mat(height, width, cv.CV_8UC3);
   dstC4 = new cv.Mat(height, width, cv.CV_8UC4);
+  mapY = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapX = cv.Mat.zeros(height, width, cv.CV_32F)
   requestAnimationFrame(processVideo);
 }
 
@@ -172,8 +175,6 @@ function passThrough(src) {
   return src;
 }
 
-let mapY = cv.Mat.zeros(height, width, cv.CV_32F)
-let mapX = cv.Mat.zeros(height, width, cv.CV_32F)
 
 function deformate(src) {
   right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
