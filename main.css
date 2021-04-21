@@ -119,3 +119,7 @@ body {
   font-size: 24px;
   position: absolute;
 }
+
+#guiContainer {
+  margin-left:300px;
+}
