@@ -14,6 +14,8 @@ spinner.ontransitionend = () => {
   spinner.style.display = 'none';
 };
 
+
+let CROSS_RESULTS;
 function onResults(results) {
   // Hide the spinner.
   document.body.classList.add('loaded');
@@ -50,6 +52,7 @@ function onResults(results) {
           canvasCtx, landmarks, FACEMESH_LIPS,
           {color: '#E0E0E0', lineWidth: 5});
     }
+    CROSS_RESULTS=results;
   }
   canvasCtx.restore();
 }
@@ -170,6 +173,7 @@ function passThrough(src) {
 }
 
 function deformate(src) {
+  console.log(results.multiFaceLandmarks[0][0])
   right_eye = [215,105]
   radius = 30
   power = 2
