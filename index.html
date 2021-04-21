@@ -1,53 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html >
 <head>
-<meta charset="utf-8">
-<!--   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script> -->
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
-  <link href="main.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="style.css">
-  <title>OpenCV.js Demos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>OpenCV.js Video Processing (WebAssembly)</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <!-- <div class="container"> -->
-    <!-- <video class="input_video invisible"></video> -->
-    <!-- <canvas class="output_canvas" width="1280px" height="720px"></canvas> -->
- <!--    <div class="loading">
-      <div class="spinner"></div>
-      <div class="message">
-        Loading
-      </div>
-    </div>
-    <a class="abs logo" href="http://www.mediapipe.dev" target="_blank">
-      <div style="display: flex;align-items: center;bottom: 0;right: 10px;">
-        <img class="logo" src="logo_white.png" alt="" style="
-          height: 50px;">
-        <span class="title">MediaPipe</span>
-      </div>
-    </a>
-    <div class="shoutout">
-      <div>
-        <a href="https://code.mediapipe.dev/codepen/face_mesh">
-          Click here to edit in CodePen
-        </a>
-      </div>
-      <div>
-        <a href="https://solutions.mediapipe.dev/face_mesh">
-          Click here for more info
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="control-panel">
-  </div>
-  <script src="index.js"></script> -->
-
-
-  <div id="info" class="text-center">
+<div id="info" class="text-center">
   OpenCV.js is loading...
 </div>
 <div id="container" class="invisible">
@@ -75,18 +35,24 @@
       <td></td>
     </tr>
   </table>
-  <!-- <div class="invisible"> -->
+  <div class="invisible">
     <video id="video" class="hidden">Your browser does not support the video tag.</video>
-  <!-- </div> -->
+  </div>
 </div>
 <script src="libs/adapter-latest.js"></script>
 <script src="libs/stats.min.js"></script>
 <script src="libs/dat.gui.min.js"></script>
 <script src="libs/utils.js"></script>
 <script>
-var featuresReady = checkFeatures(document.getElementById("info"), {webrtc: true});
+var featuresReady = checkFeatures(document.getElementById("info"), {webrtc: true, wasm: true});
 </script>
 <script src="index1.js"></script>
-<script async src="asm.js/opencv.js" onload="opencvIsReady()"></script>
+<script>
+var Module = {
+  wasmBinaryFile: 'build/wasm/opencv_js.wasm',
+  _main: function() {opencvIsReady();}
+};
+</script>
+<script async src=".build/wasm/opencv.js"></script>
 </body>
 </html>
