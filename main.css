@@ -47,6 +47,7 @@ body {
 }
 
 .output_canvas {
+  z-index:5000;
   position:absolute;
   height: 720px;
   width: 1280px;

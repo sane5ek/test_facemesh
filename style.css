@@ -8,6 +8,8 @@ canvas {
   text-align: center;
 }
 .center-block {
+  z-index:5000000;
+  position: absolute;
   display: block;
   margin: auto;
 }
