@@ -75,7 +75,7 @@ camera.start();
 // Present a control panel through which the user can manipulate the solution
 // options.
 new ControlPanel(controlsElement, {
-      selfieMode: true,
+      selfieMode: false,
       maxNumFaces: 1,
       minDetectionConfidence: 0.5,
       minTrackingConfidence: 0.5
