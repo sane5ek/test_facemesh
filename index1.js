@@ -63,14 +63,14 @@ function onResults(results) {
 // faceMesh.onResults(onResults);
 
 // Instantiate a camera. We'll feed each frame we receive into the solution.
-const camera = new Camera(videoElement, {
-  onFrame: async () => {
-    // await faceMesh.send({image: videoElement});
-  },
-  width: 1280,
-  height: 720
-});
-camera.start();
+// const camera = new Camera(videoElement, {
+//   onFrame: async () => {
+//     // await faceMesh.send({image: videoElement});
+//   },
+//   width: 1280,
+//   height: 720
+// });
+// camera.start();
 
 // Present a control panel through which the user can manipulate the solution
 // options.
