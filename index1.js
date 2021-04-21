@@ -173,7 +173,7 @@ function passThrough(src) {
 }
 
 function deformate(src) {
-  right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][0].x * width, CROSS_RESULTS.multiFaceLandmarks[0][0].y * height]
+  right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
   radius = 30
   power = 2
 
