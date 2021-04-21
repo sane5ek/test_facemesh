@@ -200,8 +200,8 @@ function deformate(src) {
   //   }
   // }
 
-  let mapY = mapYglobal.clone()
-  let mapX = mapXglobal.clone()
+  mapY = mapYglobal.clone()
+  mapX = mapXglobal.clone()
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
