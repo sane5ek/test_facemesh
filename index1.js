@@ -104,8 +104,8 @@ new ControlPanel(controlsElement, {
       }),
     ])
     .on(options => {
-      videoElement.classList.toggle('selfie', options.selfieMode);
-      faceMesh.setOptions(options);
+      // videoElement.classList.toggle('selfie', options.selfieMode);
+      // faceMesh.setOptions(options);
     });
 
 let width = 0;
