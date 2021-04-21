@@ -168,10 +168,10 @@ function startVideoProcessing() {
   dstC1 = new cv.Mat(height, width, cv.CV_8UC1);
   dstC3 = new cv.Mat(height, width, cv.CV_8UC3);
   dstC4 = new cv.Mat(height, width, cv.CV_8UC4);
-  mapYglobal = cv.Mat.zeros(height, width, cv.CV_32F)
-  mapXglobal = cv.Mat.zeros(height, width, cv.CV_32F)
-  mapY = cv.Mat.zeros(height, width, cv.CV_32F)
-  mapX = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapYglobal = new cv.Mat.zeros(height, width, cv.CV_32F)
+  mapXglobal = new cv.Mat.zeros(height, width, cv.CV_32F)
+  mapY = new cv.Mat.zeros(height, width, cv.CV_32F)
+  mapX = new cv.Mat.zeros(height, width, cv.CV_32F)
 
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
