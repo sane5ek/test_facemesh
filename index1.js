@@ -193,15 +193,15 @@ function deformate(src) {
   radius = 30
   power = 2
 
-  for (let i = 0; i < height; i++) {
-    for (let j = 0; j < width; j++) {
-      mapY.floatPtr(i, j)[0] = i
-      mapX.floatPtr(i, j)[0] = j
-    }
-  }
+  // for (let i = 0; i < height; i++) {
+  //   for (let j = 0; j < width; j++) {
+  //     mapY.floatPtr(i, j)[0] = i
+  //     mapX.floatPtr(i, j)[0] = j
+  //   }
+  // }
 
-  // let mapY = mapYglobal.clone()
-  // let mapX = mapXglobal.clone()
+  let mapY = mapYglobal.clone()
+  let mapX = mapXglobal.clone()
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
@@ -223,7 +223,7 @@ function deformate(src) {
     }
   }
   cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
-  return src;
+  return dstC4;
 }
 
 function gray(src) {
