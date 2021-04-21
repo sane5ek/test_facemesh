@@ -165,8 +165,6 @@ function startVideoProcessing() {
   dstC4 = new cv.Mat(height, width, cv.CV_8UC4);
   mapYglobal = new cv.Mat.zeros(height, width, cv.CV_32F)
   mapXglobal = new cv.Mat.zeros(height, width, cv.CV_32F)
-  mapY = new cv.Mat.zeros(height, width, cv.CV_32F)
-  mapX = new cv.Mat.zeros(height, width, cv.CV_32F)
 
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
@@ -195,8 +193,8 @@ function deformate(src) {
   //   }
   // }
 
-  let mapY = mapYglobal.clone()
-  let mapX = mapXglobal.clone()
+  mapY = mapYglobal.clone()
+  mapX = mapXglobal.clone()
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
