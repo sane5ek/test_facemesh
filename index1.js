@@ -172,8 +172,8 @@ function startVideoProcessing() {
 
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
-      mapY.floatPtr(i, j)[0] = i
-      mapX.floatPtr(i, j)[0] = j
+      mapYglobal.floatPtr(i, j)[0] = i
+      mapXglobal.floatPtr(i, j)[0] = j
     }
   }
 
