@@ -208,7 +208,7 @@ function deformate(src) {
     }
   }
   cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
-  return dstC4;
+  return src;
 }
 
 function gray(src) {
