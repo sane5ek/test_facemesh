@@ -196,8 +196,13 @@ function deformate(src) {
   //     mapX.floatPtr(i, j)[0] = j
   //   }
   // }
+  console.log(right_eye)
+
   let mapY = mapYglobal.clone()
   let mapX = mapXglobal.clone()
+
+  console.log(mapY)
+  console.log(mapX)
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
