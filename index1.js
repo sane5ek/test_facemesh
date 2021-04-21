@@ -120,7 +120,7 @@ let resolution = window.innerWidth < 640 ? qvga : vga;
 // whether streaming video from the camera.
 let streaming = false;
 
-let video = document.getElementById("input_video");
+let video = document.getElementsByClassName('input_video')[0];
 let stream = null;
 let vc = null;
 
