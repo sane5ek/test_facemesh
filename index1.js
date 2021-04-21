@@ -2,7 +2,7 @@
 const videoElement = document.getElementsByClassName('input_video')[0];
 const canvasElement = document.getElementsByClassName('output_canvas')[0];
 const controlsElement = document.getElementsByClassName('control-panel')[0];
-const canvasCtx = canvasElement.getContext('2d');
+// const canvasCtx = canvasElement.getContext('2d');
 
 // We'll add this to our control panel later, but we'll save it here so we can
 // call tick() each time the graph runs.
@@ -23,38 +23,38 @@ function onResults(results) {
   // Update the frame rate.
   fpsControl.tick();
 
-  // Draw the overlays.
-  canvasCtx.save();
-  canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
-  canvasCtx.drawImage(
-      results.image, 0, 0, canvasElement.width, canvasElement.height);
+  // // Draw the overlays.
+  // canvasCtx.save();
+  // canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+  // canvasCtx.drawImage(
+  //     results.image, 0, 0, canvasElement.width, canvasElement.height);
   if (results.multiFaceLandmarks) {
-    for (const landmarks of results.multiFaceLandmarks) {
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_TESSELATION,
-          {color: '#C0C0C070', lineWidth: 1});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_RIGHT_EYE,
-          {color: '#FF3030', lineWidth: 5});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_RIGHT_EYEBROW,
-          {color: '#FF3030', lineWidth: 5});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_LEFT_EYE,
-          {color: '#30FF30', lineWidth: 5});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_LEFT_EYEBROW,
-          {color: '#30FF30', lineWidth: 5});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_FACE_OVAL,
-          {color: '#E0E0E0', lineWidth: 5});
-      drawConnectors(
-          canvasCtx, landmarks, FACEMESH_LIPS,
-          {color: '#E0E0E0', lineWidth: 5});
-    }
+    // for (const landmarks of results.multiFaceLandmarks) {
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_TESSELATION,
+    //       {color: '#C0C0C070', lineWidth: 1});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_RIGHT_EYE,
+    //       {color: '#FF3030', lineWidth: 5});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_RIGHT_EYEBROW,
+    //       {color: '#FF3030', lineWidth: 5});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_LEFT_EYE,
+    //       {color: '#30FF30', lineWidth: 5});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_LEFT_EYEBROW,
+    //       {color: '#30FF30', lineWidth: 5});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_FACE_OVAL,
+    //       {color: '#E0E0E0', lineWidth: 5});
+    //   drawConnectors(
+    //       canvasCtx, landmarks, FACEMESH_LIPS,
+    //       {color: '#E0E0E0', lineWidth: 5});
+    // }
     CROSS_RESULTS=results;
   }
-  canvasCtx.restore();
+  // canvasCtx.restore();
 }
 
 const faceMesh = new FaceMesh({locateFile: (file) => {
