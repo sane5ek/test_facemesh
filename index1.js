@@ -120,7 +120,7 @@ let resolution = window.innerWidth < 640 ? qvga : vga;
 // whether streaming video from the camera.
 let streaming = false;
 
-let video = document.getElementById("video");
+let video = document.getElementById("input_video");
 let stream = null;
 let vc = null;
 
@@ -129,7 +129,6 @@ let container = document.getElementById('container');
 
 function startCamera() {
   if (streaming) return;
-  console.log(navigator.mediaDevices)
   navigator.mediaDevices.getUserMedia({video: resolution, audio: false})
     .then(function(s) {
     stream = s;
