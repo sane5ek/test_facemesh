@@ -9,10 +9,6 @@ const controlsElement = document.getElementsByClassName('control-panel')[0];
 const fpsControl = new FPS();
 
 // Optimization: Turn off animated spinner after its hiding animation is done.
-const spinner = document.querySelector('.loading');
-spinner.ontransitionend = () => {
-  spinner.style.display = 'none';
-};
 
 
 let CROSS_RESULTS;
