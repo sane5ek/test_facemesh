@@ -57,10 +57,10 @@ function onResults(results) {
   // canvasCtx.restore();
 }
 
-const faceMesh = new FaceMesh({locateFile: (file) => {
-  return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.1/${file}`;
-}});
-faceMesh.onResults(onResults);
+// const faceMesh = new FaceMesh({locateFile: (file) => {
+//   return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@0.1/${file}`;
+// }});
+// faceMesh.onResults(onResults);
 
 // Instantiate a camera. We'll feed each frame we receive into the solution.
 const camera = new Camera(videoElement, {
