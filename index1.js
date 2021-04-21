@@ -157,6 +157,8 @@ let src = null;
 let dstC1 = null;
 let dstC3 = null;
 let dstC4 = null;
+let mapYglobal = null;
+let mapXglobal = null;
 let mapY = null;
 let mapX = null;
 function startVideoProcessing() {
@@ -168,8 +170,9 @@ function startVideoProcessing() {
   dstC4 = new cv.Mat(height, width, cv.CV_8UC4);
   mapYglobal = cv.Mat.zeros(height, width, cv.CV_32F)
   mapXglobal = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapY = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapX = cv.Mat.zeros(height, width, cv.CV_32F)
 
-  console.log('hey', width, height)
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
       mapYglobal.floatPtr(i, j)[0] = i
@@ -196,13 +199,9 @@ function deformate(src) {
   //     mapX.floatPtr(i, j)[0] = j
   //   }
   // }
-  console.log(right_eye)
 
   let mapY = mapYglobal.clone()
   let mapX = mapXglobal.clone()
-
-  console.log(mapY)
-  console.log(mapX)
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
