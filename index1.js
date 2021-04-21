@@ -172,13 +172,13 @@ function passThrough(src) {
   return src;
 }
 
+let mapY = cv.Mat.zeros(height, width, cv.CV_32F)
+let mapX = cv.Mat.zeros(height, width, cv.CV_32F)
+
 function deformate(src) {
   right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
   radius = 30
   power = 2
-
-  let mapY = cv.Mat.zeros(height, width, cv.CV_32F)
-  let mapX = cv.Mat.zeros(height, width, cv.CV_32F)
 
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
