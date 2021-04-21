@@ -154,8 +154,8 @@ let dstC3 = null;
 let dstC4 = null;
 let mapYglobal = null;
 let mapXglobal = null;
-let mapY = null;
-let mapX = null;
+// let mapY = null;
+// let mapX = null;
 function startVideoProcessing() {
   if (!streaming) { console.warn("Please startup your webcam"); return; }
   stopVideoProcessing();
@@ -193,8 +193,8 @@ function deformate(src) {
   //   }
   // }
 
-  mapY = mapYglobal.clone()
-  mapX = mapXglobal.clone()
+  let mapY = mapYglobal.clone()
+  let mapX = mapXglobal.clone()
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
@@ -216,6 +216,8 @@ function deformate(src) {
     }
   }
   cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
+  mapY.delete();
+  mapX.delete();
   return dstC4;
 }
 
