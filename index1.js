@@ -177,16 +177,16 @@ function passThrough(src) {
 
 
 function deformate(src) {
-  right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
-  radius = 30
-  power = 2
+  // right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
+  // radius = 30
+  // power = 2
 
-  for (let i = 0; i < height; i++) {
-    for (let j = 0; j < width; j++) {
-      mapY.floatPtr(i, j)[0] = i
-      mapX.floatPtr(i, j)[0] = j
-    }
-  }
+  // for (let i = 0; i < height; i++) {
+  //   for (let j = 0; j < width; j++) {
+  //     mapY.floatPtr(i, j)[0] = i
+  //     mapX.floatPtr(i, j)[0] = j
+  //   }
+  // }
 
   // for (let i = (-1) * radius; i < radius; i++) {
   //   for (let j = (-1) * radius; j < radius; j++) {
@@ -207,7 +207,7 @@ function deformate(src) {
   //           }
   //   }
   // }
-  cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
+  // cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
   return dstC4;
 }
 
