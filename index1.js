@@ -178,7 +178,7 @@ function passThrough(src) {
 
 function deformate(src) {
   right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
-  radius = 30
+  radius = 1
   power = 2
 
   for (let i = 0; i < height; i++) {
