@@ -169,7 +169,7 @@ function startVideoProcessing() {
   mapYglobal = cv.Mat.zeros(height, width, cv.CV_32F)
   mapXglobal = cv.Mat.zeros(height, width, cv.CV_32F)
 
-
+  console.log('hey', width, height)
   for (let i = 0; i < height; i++) {
     for (let j = 0; j < width; j++) {
       mapYglobal.floatPtr(i, j)[0] = i
