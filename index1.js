@@ -178,7 +178,7 @@ function passThrough(src) {
 
 function deformate(src) {
   right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
-  radius = 1
+  radius = 30
   power = 2
 
   for (let i = 0; i < height; i++) {
@@ -207,7 +207,7 @@ function deformate(src) {
             }
     }
   }
-  cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
+  // cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
   return dstC4;
 }
 
