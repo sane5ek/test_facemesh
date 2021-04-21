@@ -177,9 +177,9 @@ function passThrough(src) {
 
 
 function deformate(src) {
-  // right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
-  // radius = 30
-  // power = 2
+  right_eye = [CROSS_RESULTS.multiFaceLandmarks[0][144].x * width, CROSS_RESULTS.multiFaceLandmarks[0][144].y * height]
+  radius = 30
+  power = 2
 
   // for (let i = 0; i < height; i++) {
   //   for (let j = 0; j < width; j++) {
@@ -188,26 +188,26 @@ function deformate(src) {
   //   }
   // }
 
-  // for (let i = (-1) * radius; i < radius; i++) {
-  //   for (let j = (-1) * radius; j < radius; j++) {
-  //     if ((i * i + j * j) > (radius * radius)) {
-  //             continue
-  //     }
-  //           if (i > 0) {
-  //             mapY.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[1] + (i/radius)*(i/radius) * radius
-  //           }
-  //           if (i < 0) {
-  //             mapY.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[1] - (-i/radius)*(-i/radius) * radius 
-  //           }
-  //           if (j > 0) {
-  //             mapX.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[0] + (j/radius)*(j/radius) * radius
-  //           }
-  //           if (j < 0) {
-  //             mapX.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[0] - (-j/radius)*(-j/radius) * radius
-  //           }
-  //   }
-  // }
-  // cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
+  for (let i = (-1) * radius; i < radius; i++) {
+    for (let j = (-1) * radius; j < radius; j++) {
+      if ((i * i + j * j) > (radius * radius)) {
+              continue
+      }
+            if (i > 0) {
+              mapY.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[1] + (i/radius)*(i/radius) * radius
+            }
+            if (i < 0) {
+              mapY.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[1] - (-i/radius)*(-i/radius) * radius 
+            }
+            if (j > 0) {
+              mapX.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[0] + (j/radius)*(j/radius) * radius
+            }
+            if (j < 0) {
+              mapX.floatPtr(right_eye[1] + i, right_eye[0] + j)[0] = right_eye[0] - (-j/radius)*(-j/radius) * radius
+            }
+    }
+  }
+  cv.remap(src,dstC4,mapX,mapY,cv.INTER_LINEAR)
   return dstC4;
 }
 
