@@ -14,7 +14,6 @@ let video = document.getElementById("video");
 let stream = null;
 let vc = null;
 
-let info = document.getElementById('info');
 let container = document.getElementById('container');
 
 function startCamera() {
@@ -575,7 +574,6 @@ function opencvIsReady() {
     console.log('Requred features are not ready.');
     return;
   }
-  info.innerHTML = '';
   container.className = '';
   initUI();
   startCamera();
