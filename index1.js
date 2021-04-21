@@ -166,8 +166,17 @@ function startVideoProcessing() {
   dstC1 = new cv.Mat(height, width, cv.CV_8UC1);
   dstC3 = new cv.Mat(height, width, cv.CV_8UC3);
   dstC4 = new cv.Mat(height, width, cv.CV_8UC4);
-  mapY = cv.Mat.zeros(height, width, cv.CV_32F)
-  mapX = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapYglobal = cv.Mat.zeros(height, width, cv.CV_32F)
+  mapXglobal = cv.Mat.zeros(height, width, cv.CV_32F)
+
+
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
+      mapY.floatPtr(i, j)[0] = i
+      mapX.floatPtr(i, j)[0] = j
+    }
+  }
+
   requestAnimationFrame(processVideo);
 }
 
@@ -187,6 +196,8 @@ function deformate(src) {
   //     mapX.floatPtr(i, j)[0] = j
   //   }
   // }
+  let mapY = mapYglobal.clone()
+  let mapX = mapXglobal.clone()
 
   for (let i = (-1) * radius; i < radius; i++) {
     for (let j = (-1) * radius; j < radius; j++) {
