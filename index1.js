@@ -173,7 +173,8 @@ function passThrough(src) {
 }
 
 function deformate(src) {
-  console.log(results.multiFaceLandmarks[0][0])
+  console.log('coords', results.multiFaceLandmarks[0][0])
+  console.log('length', results.multiFaceLandmarks[0].length)
   right_eye = [215,105]
   radius = 30
   power = 2
