@@ -129,6 +129,7 @@ let container = document.getElementById('container');
 
 function startCamera() {
   if (streaming) return;
+  console.log(navigator.mediaDevices)
   navigator.mediaDevices.getUserMedia({video: resolution, audio: false})
     .then(function(s) {
     stream = s;
